@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/03/06 21:28:23 by dacortes         ###   ########.fr        #
+#    Updated: 2023/03/06 21:51:31 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ NAME = push_swap
 CC = gcc
 RM = rm -rf
 LIBC = ar -rcs
-FLAGS = -Wall -Wextra -Werror -O3 -g
+FLAGS = -Wall -Wextra -Werror -g
 
 # =========================== SOURCES ======================================== #
 
-SRC = hola.c
+SRC = prueba.c
 LIBFT = ./libft/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
