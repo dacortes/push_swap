@@ -6,13 +6,13 @@
 #    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/03/06 21:00:39 by dacortes         ###   ########.fr        #
+#    Updated: 2023/03/06 21:28:23 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # =============================== VARIABLES ================================== #
 
-NAME = fractol
+NAME = push_swap
 CC = gcc
 RM = rm -rf
 LIBC = ar -rcs
@@ -20,19 +20,12 @@ FLAGS = -Wall -Wextra -Werror -O3 -g
 
 # =========================== SOURCES ======================================== #
 
-SRC = check_arg.c colors.c events.c exit.c init_var.c main.c render.c reset_var.c\
-	status_btn.c\
-	menu/render_mn.c menu/printf_sets.c menu/txt_sets.c\
-	sets/mandelbrot.c sets/julia.c sets/Burning_ship.c
+SRC = hola.c
 LIBFT = ./libft/
-MINIL = ./miniLibX/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
-L_MLX = ./miniLibX/libmlx.a
-L_FRAME = -framework OpenGL -framework AppKit
 INC			=	-I ./inc/\
 				-I ./libft/\
-				-I ./minilibX/
 
 # =========================== DIRECTORIES ==================================== #
 
@@ -59,15 +52,12 @@ all: dir $(NAME)
 -include $(DEP)
 dir:
 	@make bonus -C $(LIBFT)
-	@make -C $(MINIL)
 	@mkdir -p $(D_OBJ)
-	@mkdir -p $(D_OBJ)/sets
-	@mkdir -p $(D_OBJ)/menu
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r$@...$(E)"
 	@$(CC) -MMD $(FLAGS) -c $< -o $@ $(INC)
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) $(L_LIB) $(L_MLX) $(L_FRAME) -o $(NAME) $(INC)
+	@$(CC) $(FLAGS) $(OBJ) $(L_LIB) -o $(NAME) $(INC)
 	@echo  "\n$(B)$(ligth)-->$(G) ==== Project fractol compiled! ==== ✅$(E)"
 
 # ========================== CLEAN   ===================================== #
@@ -80,6 +70,5 @@ fclean: clean
 clean:
 	@$(RM) $(D_OBJ)
 	@make clean -C $(LIBFT)
-	@make clean -C $(MINIL)
 	@echo "$(B)$(ligth)-->$(E)$(ligth) ==== fractol executable files and name cleaned! ==== ✅$(E)"
 re: fclean all
