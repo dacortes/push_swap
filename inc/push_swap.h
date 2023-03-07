@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 14:31:08 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:29:59 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,10 @@ typedef struct s_stack
 	t_element	*bot;
 }	t_stack;
 
+// ================================= FUNCTIONS ============================== //
+
+/* src/init/init.c */
+int		stack_init(t_stack **stack);
+/* src/destroy/destroy.c */
+void	stack_destroy(t_stack *destroy);
 #endif

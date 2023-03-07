@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 16:29:48 by dacortes         ###   ########.fr       */
+/*   Created: 2023/03/07 16:25:09 by dacortes          #+#    #+#             */
+/*   Updated: 2023/03/07 16:29:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/push_swap.h"
+#include"../../inc/push_swap.h"
 
-int	main(void)
+void	stack_destroy(t_stack *destroy)
 {
-	t_stack	*a;
+	t_element	*elem;
 
-	stack_init(&a);
-	stack_destroy(a);
-	return (SUCCES);
+	while (destroy->top != NULL)
+	{
+		elem = destroy->top;
+		destroy->top = destroy->top->next;
+		free(elem);
+	}
+	free(destroy);
 }

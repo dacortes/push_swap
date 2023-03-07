@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 16:29:48 by dacortes         ###   ########.fr       */
+/*   Created: 2023/03/07 16:19:38 by dacortes          #+#    #+#             */
+/*   Updated: 2023/03/07 16:29:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/push_swap.h"
+#include"../../inc/push_swap.h"
 
-int	main(void)
+int	stack_init(t_stack **stack)
 {
-	t_stack	*a;
-
-	stack_init(&a);
-	stack_destroy(a);
+	*stack = (t_stack *)ft_calloc(sizeof(t_stack), 1);
+	if (!stack)
+		return (ERROR);
+	(*stack)->size = 0;
+	(*stack)->top = NULL;
+	(*stack)->bot = NULL;
 	return (SUCCES);
 }

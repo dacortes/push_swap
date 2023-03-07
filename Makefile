@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/03/07 14:37:21 by dacortes         ###   ########.fr        #
+#    Updated: 2023/03/07 16:23:54 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FLAGS = -Wall -Wextra -Werror -g
 
 # =========================== SOURCES ======================================== #
 
-SRC = main.c
+SRC = init/init.c main.c
 LIBFT = ./libft/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
@@ -53,6 +53,7 @@ all: dir $(NAME)
 dir:
 	@make bonus -C $(LIBFT)
 	@mkdir -p $(D_OBJ)
+	@mkdir -p $(D_OBJ)/init
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r$@...$(E)"
 	@$(CC) -MMD $(FLAGS) -c $< -o $@ $(INC)
