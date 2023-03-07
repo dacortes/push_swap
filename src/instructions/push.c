@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prueba.c                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 21:25:50 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/06 21:52:43 by dacortes         ###   ########.fr       */
+/*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
+/*   Updated: 2023/03/07 14:25:36 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/push_swap.h"
+#include"../../inc/push_swap.h"
 
-int	main(void)
+int push(t_stack *stack_dst, t_stack *stack_src)
 {
-	ft_printf("hola");
-	return (0);
+	t_element *top_src;
 }
