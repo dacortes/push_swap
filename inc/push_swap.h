@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 16:29:59 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:37:08 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@
 // ================================= STRUCTURES ============================= //
 
 /* auxiliary node*/
-typedef struct s_element
+typedef struct s_node
 {
-	int					value;
-	struct s_element	*next;
-	struct s_element	*prev;
-}	t_element;
+	int				data;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
 
 /* main stack structure */
 typedef struct s_stack
 {
-	int			size;
-	t_element	*top;
-	t_element	*bot;
+	int		size;
+	t_node	*top;
+	t_node	*bot;
 }	t_stack;
 
 // ================================= FUNCTIONS ============================== //
@@ -69,5 +69,7 @@ typedef struct s_stack
 /* src/init/init.c */
 int		stack_init(t_stack **stack);
 /* src/destroy/destroy.c */
-void	stack_destroy(t_stack *destroy);
+void	stack_destroy(t_stack *stack);
+/* intructions/push.c */
+int		push_num(t_stack *stack, int num);
 #endif
