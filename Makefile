@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/03/07 17:18:28 by dacortes         ###   ########.fr        #
+#    Updated: 2023/03/07 22:53:28 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ FLAGS = -Wall -Wextra -Werror -g
 
 # =========================== SOURCES ======================================== #
 
-SRC = destroy/destroy.c\
+SRC = check/check_arg.c\
+	destroy/destroy.c\
 	init/init.c\
 	instructions/push.c\
 	main.c
@@ -56,6 +57,7 @@ all: dir $(NAME)
 dir:
 	@make bonus -C $(LIBFT)
 	@mkdir -p $(D_OBJ)
+	@mkdir -p $(D_OBJ)/check
 	@mkdir -p $(D_OBJ)/destroy
 	@mkdir -p $(D_OBJ)/init
 	@mkdir -p $(D_OBJ)/instructions

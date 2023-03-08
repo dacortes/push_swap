@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 22:12:15 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/08 12:27:02 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,13 @@ void stack_printf(t_stack	*sactk)
 	}
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	t_stack	*a;
-	
-	if(stack_init(&a) == ERROR)
+	(void)ac;
+	if (check_av(av) == ERROR)
 	{
-		ft_printf(R"Error: cannot initialize stack\n"E);
-		return(ERROR);
+		ft_printf(R"Error\n"E);
+		return (ERROR);
 	}
-	push_num(a, 10);
-	push_num(a, 20);
-	push_num(a, 50);
-	stack_printf(a);
-	stack_destroy(a);
 	return (SUCCES);
 }

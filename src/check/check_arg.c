@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 22:18:40 by dacortes         ###   ########.fr       */
+/*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
+/*   Updated: 2023/03/08 12:26:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/push_swap.h"
 
-int	push_stack(t_stack *stack, int num)
+int		check_av(char **av)
 {
-	t_node *new_node;
+	int	i;
+	int	j;
 
-	new_node = (t_node *)ft_calloc(sizeof(t_node), 1);
-	if (!new_node)
-		return (ERROR);
-	new_node->data = num;
-	new_node->next = NULL;
-	if (stack->size == 0)
+	i = 1;
+	j = 0;
+	while(av[i])
 	{
-		stack->top = new_node;
-		stack->bot = new_node;
+		if (av[i][0] == '+' || av[i][0] == '-')
+			j++;
+		while(av[i][j])
+		{
+			if (ft_isdigit(av[i][j]))
+				j++;
+			else
+				return (ERROR);
+		}
+		j = 0;
+		i++;
 	}
-	else
-	{
-		new_node->next = stack->top;
-		stack->top = new_node;
-	}
-	stack->size++;
 	return (SUCCES);
 }
