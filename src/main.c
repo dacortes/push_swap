@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/08 12:27:02 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:58:47 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ void stack_printf(t_stack	*sactk)
 
 int	main(int ac, char **av)
 {
-	(void)ac;
-	if (check_av(av) == ERROR)
-	{
-		ft_printf(R"Error\n"E);
-		return (ERROR);
-	}
+	int i;
+	i = 0;
+	while (av[1][i])
+		ft_printf(B"%c"E,av[1][i++]);
+	check_ac(ac, av);
 	return (SUCCES);
 }

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/08 12:26:38 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:37:04 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_stack
 // ================================= FUNCTIONS ============================== //
 
 /* check/check_arg */
+int		check_ac(int ac, char **av);
 int		check_av(char **av);
 /* src/destroy/destroy.c */
 void	stack_destroy(t_stack *stack);
