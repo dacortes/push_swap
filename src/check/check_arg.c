@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/08 14:31:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:42:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 int	check_ac(int ac, char **av)
 {
 	if (ac <= 1)
-	{
-		ft_printf(R"Error\n"E);
 		exit (ERROR);
-	}
 	else if (check_av(av) == ERROR)
 	{
 		ft_printf(R"Error\n"E);
@@ -69,8 +66,28 @@ int	is_ordered(int ac, char **av)
 		i++;
 	}
 	j = 0;
-	while (j < ac - 1)
-		ft_printf(B"%d"E, array[j++]);
+	while (j < ac -1)
+		ft_printf(B"%d "E, array[j++]);
+	ft_printf("\n");
+	j = 0;
+	i = 0;
+	while (array[j] && j <= ac - 1)
+	{
+		while (array[i] && i <= ac -1)
+		{
+			if (array[j] > array[i])
+				ft_printf(G"OK"E);
+			else if (array[j] == array[i + 1])
+				{
+					ft_printf(R"Es igual no puedo trabajar\n"E);
+					free(array);
+					return (ERROR);
+				}
+			i++;
+		}
+		i = j + 1;
+		j++;
+	}
 	free(array);
 	return (SUCCES);
 }
