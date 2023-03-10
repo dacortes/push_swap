@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/08 14:24:25 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:38:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	main(int ac, char **av)
 	int i;
 	i = 0;
 	check_ac(ac, av);
-	is_ordered(ac, av);
+	//is_ordered(ac, av);
 	return (SUCCES);
 }

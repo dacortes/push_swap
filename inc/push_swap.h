@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/08 14:18:12 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:56:05 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ typedef struct s_stack
 /* check/check_arg */
 int		check_ac(int ac, char **av);
 int		check_av(char **av);
-int		is_ordered(int ac, char **av);
+int		check_num(int ac, char **av);
+int		check_num_neg(int ac, char **av);
+int		check_num_pos(int ac, char **av);
+//int		is_ordered(int ac, char **av);
 /* src/destroy/destroy.c */
 void	stack_destroy(t_stack *stack);
 /* src/init/init.c */
