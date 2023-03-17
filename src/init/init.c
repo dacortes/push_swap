@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:19:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 19:38:56 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:46:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,15 @@ int	stack_init(t_stack **stack)
 	(*stack)->size = 0;
 	(*stack)->top = NULL;
 	(*stack)->bot = NULL;
+	return (SUCCES);
+}
+
+int	double_init(t_stack **one, t_stack **two)
+{
+	if (stack_init(one) == ERROR || stack_init(two) == ERROR)
+		{
+			ft_printf(R"Error\n"E);
+			exit (ERROR);
+		}
 	return (SUCCES);
 }

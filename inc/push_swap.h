@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:12:18 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:44:45 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int		check_num(int ac, char **av);
 void	stack_destroy(t_stack *stack);
 /* src/init/init.c */
 int		stack_init(t_stack **stack);
+int		double_init(t_stack **one, t_stack **two);
 /* intructions/push.c */
 int		push_stack(t_stack *stack, int num);
 int		pop_stack(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:29:27 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:45:20 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ int	main(int ac, char **av)
 	t_node *nod;
 	
 	check_arg(ac, av);
-	stack_init(&a);
-	stack_init(&b);
+	double_init(&a, &b);
 	setup_stack(av, a);
 	push(a, b, PUSH_B);
 	nod = b->top;

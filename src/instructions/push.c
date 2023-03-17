@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:11:46 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:48:52 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	pop_stack(t_stack *stack)
 	stack->size--;
 	return (data);
 }
-
 
 int	push(t_stack *scr, t_stack *dst, int type_push)
 {
