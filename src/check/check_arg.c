@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/10 15:09:06 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 10:39:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 int	check_arg(int ac, char **av)
 {
 	if (ac <= 1)
+	{
+		ft_printf(R"Error\n"E);
 		exit (ERROR);
-	else if (check_av(av) == ERROR && check_num(ac, av) == ERROR)
+	}
+	else if (check_av(av) == ERROR || check_num(ac, av) == ERROR)
 	{
 		ft_printf(R"Error\n"E);
 		exit (ERROR);
