@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:45:20 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:52:18 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int ac, char **av)
 	nod = b->top;
 	ft_printf(Y"%d\n"E, nod->data);
 	stack_printf(a);
-	stack_destroy(a);
-	stack_destroy(b);
+	double_destroy(a, b);
 	return (SUCCES);
 }

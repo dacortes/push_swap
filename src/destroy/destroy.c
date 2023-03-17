@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:25:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 18:42:57 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:51:47 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ void	stack_destroy(t_stack *stack)
 		free(elem);
 	}
 	free(stack);
+}
+
+void	double_destroy(t_stack *one, t_stack *two)
+{
+	stack_destroy(one);
+	stack_destroy(two);
 }
