@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/10 15:10:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:12:18 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void	stack_destroy(t_stack *stack);
 int		stack_init(t_stack **stack);
 /* intructions/push.c */
 int		push_stack(t_stack *stack, int num);
+int		pop_stack(t_stack *stack);
+int		push(t_stack *scr, t_stack *dst, int type_push);
 
 #endif

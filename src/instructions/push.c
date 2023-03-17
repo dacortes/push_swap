@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/07 22:18:40 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:11:46 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,38 @@ int	push_stack(t_stack *stack, int num)
 	}
 	stack->size++;
 	return (SUCCES);
+}
+
+int	pop_stack(t_stack *stack)
+{
+	int data;
+	t_node *temp;
+
+	if (!stack || !stack->top)
+		return (FALSE);
+	temp = stack->top;
+	data = temp->data;
+	stack->top = temp->next;
+	if (!stack->top)
+		stack->bot = NULL;
+	free(temp);
+	stack->size--;
+	return (data);
+}
+
+
+int	push(t_stack *scr, t_stack *dst, int type_push)
+{
+	t_node *nod;
+
+	if (!scr || !scr->top)
+		return(FALSE);
+	nod = scr->top;
+	push_stack(dst,nod->data);
+	pop_stack(scr);
+	if (type_push == PUSH_A)
+		ft_printf("pa\n");
+	if (type_push == PUSH_B)
+		ft_printf("pb\n");
+	return(SUCCES);
 }
