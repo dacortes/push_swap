@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
+#    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/03/09 11:09:42 by dacortes         ###   ########.fr        #
+#    Updated: 2023/04/05 17:14:50 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS = -Wall -Wextra -Werror -g
 SRC = check/check_arg.c\
 	destroy/destroy.c\
 	init/init.c\
-	instructions/push.c\
+	instructions/push.c instructions/reverse_rotate.c instructions/swap.c\
 	main.c
 LIBFT = ./libft/
 L_SRC = ./src

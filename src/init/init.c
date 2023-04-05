@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:19:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:52:04 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:44:46 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	stack_init(t_stack **stack)
 	(*stack)->size = 0;
 	(*stack)->top = NULL;
 	(*stack)->bot = NULL;
-	return (SUCCES);
+	return (SUCCESS);
 }
 
 int	double_init(t_stack **one, t_stack **two)
@@ -30,5 +30,5 @@ int	double_init(t_stack **one, t_stack **two)
 			ft_printf(R"Error\n"E);
 			exit (ERROR);
 		}
-	return (SUCCES);
+	return (SUCCESS);
 }

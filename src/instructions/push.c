@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:48:52 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:36:51 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	push_stack(t_stack *stack, int num)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = (t_node *)ft_calloc(sizeof(t_node), 1);
 	if (!new_node)
@@ -32,13 +32,13 @@ int	push_stack(t_stack *stack, int num)
 		stack->top = new_node;
 	}
 	stack->size++;
-	return (SUCCES);
+	return (SUCCESS);
 }
 
 int	pop_stack(t_stack *stack)
 {
-	int data;
-	t_node *temp;
+	t_node	*temp;
+	int		data;
 
 	if (!stack || !stack->top)
 		return (FALSE);
@@ -54,16 +54,16 @@ int	pop_stack(t_stack *stack)
 
 int	push(t_stack *scr, t_stack *dst, int type_push)
 {
-	t_node *nod;
+	t_node	*nod;
 
 	if (!scr || !scr->top)
-		return(FALSE);
+		return (FALSE);
 	nod = scr->top;
-	push_stack(dst,nod->data);
+	push_stack(dst, nod->data);
 	pop_stack(scr);
 	if (type_push == PUSH_A)
 		ft_printf("pa\n");
 	if (type_push == PUSH_B)
 		ft_printf("pb\n");
-	return(SUCCES);
+	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/17 11:52:25 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:40:12 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // ================================= MACROS ================================= //
 
 /* Outputs */
-# define SUCCES 0
+# define SUCCESS 0
 # define FALSE 0
 # define TRUE 1
 # define ERROR -1
@@ -80,5 +80,10 @@ int		double_init(t_stack **one, t_stack **two);
 int		push_stack(t_stack *stack, int num);
 int		pop_stack(t_stack *stack);
 int		push(t_stack *scr, t_stack *dst, int type_push);
-
+/* intructions/reverse_rotate.c */
+int		reverse_rotate(t_stack *stack, int type_reverse_rotate);
+int		double_rrr(t_stack *one, t_stack *two, int type_reverse_rotate);
+/* intructions/swap */
+int		swap(t_stack *stack, int type_swap);
+int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
 #endif
