@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 14:55:32 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:22:02 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ typedef struct s_stack
 int		check_arg(int ac, char **av);
 int		check_av(char **av);
 int		check_num(int ac, char **av);
-/*int		check_zero(char **av);*/
+int		check_duplicate(int ac, char **av);
 /* src/destroy/destroy.c */
 void	stack_destroy(t_stack *stack);
 void	double_destroy(t_stack *one, t_stack *two);

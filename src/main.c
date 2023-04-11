@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 14:54:25 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:29:17 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,6 @@ int	main(int ac, char **av)
 	stack_printf(a);
 	ft_printf(B"Stack B\n"E);
 	stack_printf(b);
-	ft_printf(Y"Apply ra\n"E);
-	rotate_rotate(a, b, 0);
-	stack_printf(a);
-	ft_printf(Y"Apply rb\n"E);
-	stack_printf(b);
-	/*ft_printf(B"Se le aplica rra\n"E);
-	reverse_rotate(a, REV_ROTATE_A);
-	stack_printf(a);
-	ft_printf(B"Se le aplica rrb\n"E);
-	reverse_rotate(b, REV_ROTATE_B);
-	stack_printf(b);
-	double_destroy(a, b);*/
-	stack_destroy(a);
-	stack_destroy(b);
+	double_destroy(a, b);
 	return (SUCCESS);
 }
