@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 12:09:27 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:52:48 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,15 @@ int	main(int ac, char **av)
 	push(a, b, PUSH_B);
 	push(a, b, PUSH_B);
 	push(a, b, PUSH_B);
-	ft_printf(B"Stack a\n"E);
+	ft_printf(B"Stack A\n"E);
 	stack_printf(a);
-	ft_printf(B"Stack b\n"E);
+	ft_printf(B"Stack B\n"E);
 	stack_printf(b);
-	ft_printf(B"Apply rra\n"E);
-	double_rrr(a, b ,0);
+	ft_printf(Y"Apply ra\n"E);
+	rotate_rotate(a, b, 0);
 	stack_printf(a);
-	ft_printf(B"Apply rrb\n"E);
+	ft_printf(Y"Apply rb\n"E);
 	stack_printf(b);
-
 	/*ft_printf(B"Se le aplica rra\n"E);
 	reverse_rotate(a, REV_ROTATE_A);
 	stack_printf(a);

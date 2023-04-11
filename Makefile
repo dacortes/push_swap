@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/04/05 17:14:50 by dacortes         ###   ########.fr        #
+#    Updated: 2023/04/11 14:40:11 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = check/check_arg.c\
 	destroy/destroy.c\
 	init/init.c\
 	instructions/push.c instructions/reverse_rotate.c instructions/swap.c\
+	instructions/rotate.c\
 	main.c
 LIBFT = ./libft/
 L_SRC = ./src

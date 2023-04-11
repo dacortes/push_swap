@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 09:53:44 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:52:54 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ int		push(t_stack *scr, t_stack *dst, int type_push);
 /* intructions/reverse_rotate.c */
 int		reverse_rotate(t_stack *stack, int type_reverse_rotate);
 int		double_rrr(t_stack *one, t_stack *two, int type_reverse_rotate);
+/* instructions/rotate */
+int		rotate(t_stack *stack, int type_rotate);
+int		rotate_rotate(t_stack *one, t_stack *two, int type_rotate);
 /* intructions/swap */
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
