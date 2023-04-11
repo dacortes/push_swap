@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 14:52:54 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:55:32 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 
 /* Outputs */
 # define SUCCESS 0
-# define FALSE 0
-# define TRUE 1
-# define ERROR -1
-# define E_EXIT 1
+# define FALSE	 0
+# define TRUE	 1
+# define ERROR 	-1
+# define E_EXIT  1
 
 /* Options */
 # define NEXT_			1

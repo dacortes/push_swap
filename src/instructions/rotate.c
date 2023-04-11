@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:10:41 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 14:51:11 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:54:56 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	rotate(t_stack *stack, int type_rotate)
 {
 	t_node	*top;
 	t_node	*bot;
-	
+
 	if (stack->size < 2)
 		return (FALSE);
 	top = stack->top;
