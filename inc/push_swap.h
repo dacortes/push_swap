@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/05 17:40:12 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:53:44 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define E_EXIT 1
 
 /* Options */
+# define NEXT_			1
+# define PREV_			2
 # define SWAP_A			1
 # define SWAP_B			2
 # define SWAP			3
@@ -86,4 +88,7 @@ int		double_rrr(t_stack *one, t_stack *two, int type_reverse_rotate);
 /* intructions/swap */
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
+/* test */
+void	stack_printf(t_stack	*sactk);
+void	node_printf(t_node	*node, int type);
 #endif

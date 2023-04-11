@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/05 17:44:44 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:58:22 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,30 @@ void	stack_printf(t_stack	*sactk)
 	{
 		ft_printf(G"%d\n"E, nod->data);
 		nod = nod->next;
+	}
+}
+
+void	node_printf(t_node	*node, int type)
+{
+	t_node	*nod;
+
+	nod = node;
+
+	if (type == NEXT_)
+	{
+		while (nod)
+		{
+			ft_printf(B"%d\n"E, nod->data);
+			nod = nod->next;
+		}
+	}
+	if (type == PREV_)
+	{
+		while (nod)
+		{
+			ft_printf(B"%d\n"E, nod->data);
+			nod = nod->prev;
+		}
 	}
 }
 
@@ -50,12 +74,8 @@ int	main(int ac, char **av)
 	stack_printf(a);
 	ft_printf(B"Stack b\n"E);
 	stack_printf(b);
-	ft_printf(G"Apply ss\n"E);
-	swap_swap(a, b);
-	ft_printf(B"Res\nStack a\n"E);
-	stack_printf(a);
-	ft_printf(B"Stack b\n"E);
-	stack_printf(b);
+	ft_printf(B"Apply rra\n"E);
+	reverse_rotate(a,0);
 
 	/*ft_printf(B"Se le aplica rra\n"E);
 	reverse_rotate(a, REV_ROTATE_A);
