@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 16:29:17 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:07:17 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void	node_printf(t_node	*node, int type)
 	}
 }
 
-void	setup_stack(char **av, t_stack *stack)
+void	setup_stack(int ac, char **av, t_stack *stack)
 {
 	int	i;
 
-	i = 1;
-	while (av[i])
-		push_stack(stack, ft_atoi(av[i++]));
+	i = ac - 1;
+	while (av[i] && i != 0)
+		push_stack(stack, ft_atoi(av[i--]));
 }
 
 int	main(int ac, char **av)
@@ -64,7 +64,14 @@ int	main(int ac, char **av)
 	
 	check_arg(ac, av);
 	double_init(&a, &b);
-	setup_stack(av, a);
+	setup_stack(ac, av, a);
+	if (is_stack_sorted(a) == FALSE)
+		ft_printf(B"You can work\n"E);
+	else
+	{
+		double_destroy(a, b);
+		return (SUCCESS);
+	}
 	stack_printf(a);
 	push(a, b, PUSH_B);
 	push(a, b, PUSH_B);

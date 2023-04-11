@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 16:28:59 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:43:10 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int	check_arg(int ac, char **av)
 		ft_printf(R"Error\n"E);
 		exit (ERROR);
 	}
-	else if (check_av(av) == ERROR || check_num(ac, av) == ERROR ||
-		check_duplicate(ac, av) == ERROR)
+	else if (check_av(av) == ERROR || check_num(ac, av) == ERROR
+		|| check_duplicate(ac, av) == ERROR)
 	{
 		ft_printf(R"Error\n"E);
 		exit (ERROR);
 	}
-	else if (check_av(av) == SUCCESS && check_num(ac, av) == ERROR &&
-		check_duplicate(ac, av) == ERROR)
+	else if (check_av(av) == SUCCESS && check_num(ac, av) == ERROR
+		&& check_duplicate(ac, av) == ERROR)
 	{
 		ft_printf(R"Error\n"E);
 		exit (ERROR);
@@ -88,15 +88,10 @@ int	check_num(int ac, char **av)
 	return (SUCCESS);
 }
 
-/*int	is_ordered(int ac, char **av)
-{
-	
-	return (SUCCESS);
-}*/
 int	check_duplicate(int ac, char **av)
 {
 	int	num;
-	int next;
+	int	next;
 
 	num = 1;
 	while (num < ac)
@@ -111,4 +106,18 @@ int	check_duplicate(int ac, char **av)
 		++num;
 	}
 	return (SUCCESS);
+}
+
+int	is_stack_sorted(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node && node->next)
+	{
+		if (node->data > node->next->data)
+			return (FALSE);
+		node = node->next;
+	}
+	return (TRUE);
 }
