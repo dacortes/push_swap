@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 09:58:22 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 12:09:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ int	main(int ac, char **av)
 	ft_printf(B"Stack b\n"E);
 	stack_printf(b);
 	ft_printf(B"Apply rra\n"E);
-	reverse_rotate(a,0);
+	double_rrr(a, b ,0);
+	stack_printf(a);
+	ft_printf(B"Apply rrb\n"E);
+	stack_printf(b);
 
 	/*ft_printf(B"Se le aplica rra\n"E);
 	reverse_rotate(a, REV_ROTATE_A);
@@ -84,5 +87,7 @@ int	main(int ac, char **av)
 	reverse_rotate(b, REV_ROTATE_B);
 	stack_printf(b);
 	double_destroy(a, b);*/
+	stack_destroy(a);
+	stack_destroy(b);
 	return (SUCCESS);
 }

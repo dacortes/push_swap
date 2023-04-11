@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/05 16:44:32 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 10:22:29 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	check_av(char **av)
 
 int	check_num(int ac, char **av)
 {
-	{
 	int	i;
 	int	size;
 
@@ -70,8 +69,8 @@ int	check_num(int ac, char **av)
 	while (i < ac)
 	{
 		size = ft_strlen(av[i]);
-		if (size == 0 || ((size > 10 && av[i][0] != '-') && 
-			(size > 10 && av[i][0] != '+')) || size > 11)
+		if (size == 0 || ((size > 10 && av[i][0] != '-')
+			&& (size > 10 && av[i][0] != '+')) || size > 11)
 			return (ERROR);
 		if (av[i][0] != '-' && size == 10 &&
 			ft_strncmp(av[i], "2147483647", 10) > 0)
@@ -85,5 +84,4 @@ int	check_num(int ac, char **av)
 		++i;
 	}
 	return (SUCCESS);
-}
 }

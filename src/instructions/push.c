@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 10:09:27 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:10:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	push_stack(t_stack *stack, int num)
 	return (SUCCESS);
 }
 
-/*int	pop_stack(t_stack *stack)
+int	pop_stack(t_stack *stack)
 {
 	t_node	*temp;
 	int		data;
@@ -50,40 +50,17 @@ int	push_stack(t_stack *stack, int num)
 	if (!stack->top)
 		stack->bot = NULL;
 	else
+	{
 		stack->top->prev = NULL;
+		stack->bot = stack->top;
+		while (stack->bot->next)
+			stack->bot = stack->bot->next;
+	}
 	free(temp);
 	stack->size--;
 	if (stack->size == 0)
 		stack->bot = NULL;
-	else
-		stack->bot = stack->top->prev;
 	return (data);
-}*/
-
-int pop_stack(t_stack *stack)
-{
-    t_node *temp;
-    int data;
-
-    if (!stack || !stack->top)
-        return (FALSE);
-    temp = stack->top;
-    data = temp->data;
-    stack->top = temp->next;
-    if (!stack->top)
-        stack->bot = NULL;
-    else
-    {
-        stack->top->prev = NULL;
-        stack->bot = stack->top;
-        while (stack->bot->next)
-            stack->bot = stack->bot->next;
-    }
-    free(temp);
-    stack->size--;
-    if (stack->size == 0)
-        stack->bot = NULL;
-    return (data);
 }
 
 int	push(t_stack *scr, t_stack *dst, int type_push)

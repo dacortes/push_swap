@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:10:23 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 10:13:35 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/11 12:07:21 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,25 @@
 
 int	reverse_rotate(t_stack *stack, int type_reverse_rotate)
 {
+	t_node	*prev_bot;
 	t_node	*top;
 	t_node	*bot;
 
-	(void) type_reverse_rotate;
+	if (stack->size < 2)
+		return (FALSE);
 	top = stack->top;
 	bot = stack->bot;
-	//node_printf(stack->bot, PREV_);
-	//ft_printf("el stack bot es :%d", stack->bot->data);
-	//node_printf(stack->bot->next);
+	prev_bot = bot->prev;
+	stack->bot = prev_bot;
+	prev_bot->next = NULL;
+	prev_bot->prev = NULL;
+	top->prev = bot;
+	bot->next = top;
+	stack->top = bot;
+	if (type_reverse_rotate == REV_ROTATE_A)
+		ft_printf("rra\n");
+	if (type_reverse_rotate == REV_ROTATE_B)
+		ft_printf("rrb\n");
 	return (SUCCESS);
 }
 
