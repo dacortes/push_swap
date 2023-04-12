@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 16:42:49 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:35:12 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@
 typedef struct s_node
 {
 	int				data;
+	int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -80,7 +81,7 @@ void	double_destroy(t_stack *one, t_stack *two);
 /* src/init/init.c */
 int		double_init(t_stack **one, t_stack **two);
 /* intructions/push.c */
-int		push_stack(t_stack *stack, int num);
+int		push_stack(t_stack *stack, int data, int index);
 int		pop_stack(t_stack *stack);
 int		push(t_stack *scr, t_stack *dst, int type_push);
 /* intructions/reverse_rotate.c */

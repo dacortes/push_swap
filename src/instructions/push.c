@@ -6,20 +6,21 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 11:10:40 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:38:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/push_swap.h"
 
-int	push_stack(t_stack *stack, int num)
+int	push_stack(t_stack *stack, int data, int index)
 {
 	t_node	*new_node;
 
 	new_node = (t_node *)ft_calloc(sizeof(t_node), 1);
 	if (!new_node)
 		return (ERROR);
-	new_node->data = num;
+	new_node->data = data;
+	new_node->index = index;
 	new_node->next = NULL;
 	if (stack->size == 0)
 	{
@@ -41,11 +42,13 @@ int	pop_stack(t_stack *stack)
 {
 	t_node	*temp;
 	int		data;
+	int		index;
 
 	if (!stack || !stack->top)
 		return (FALSE);
 	temp = stack->top;
 	data = temp->data;
+	index = temp->index;
 	stack->top = temp->next;
 	if (!stack->top)
 		stack->bot = NULL;
@@ -70,7 +73,7 @@ int	push(t_stack *scr, t_stack *dst, int type_push)
 	if (!scr || !scr->top)
 		return (FALSE);
 	nod = scr->top;
-	push_stack(dst, nod->data);
+	push_stack(dst, nod->data, nod->index);
 	pop_stack(scr);
 	if (type_push == PUSH_A)
 		ft_printf("pa\n");

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 16:43:10 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:03:25 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,21 +90,30 @@ int	check_num(int ac, char **av)
 
 int	check_duplicate(int ac, char **av)
 {
+	int	*stack;
 	int	num;
 	int	next;
 
-	num = 1;
+	stack = ft_calloc(ac - 1, sizeof(int));
+	if (!stack)
+		return (ERROR);
+	num = 0;
+	next = 1;
+	while (next < ac)
+		stack[num++] = ft_atoi(av[next++]);
+	num = 0;
 	while (num < ac)
 	{
 		next = num + 1;
-		while (next < ac)
+		while (next < ac - 1)
 		{
-			if (ft_strncmp(av[num], av[next], ft_strlen(av[num])) == 0)
+			if (stack[num] == stack[next])
 				return (ERROR);
-			++next;
-		}	
-		++num;
+			next++;
+		}
+		num++;
 	}
+	free(stack);
 	return (SUCCESS);
 }
 
