@@ -6,13 +6,13 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/13 15:33:20 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:35:36 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/push_swap.h"
 
-static int axu_setup(int ac, char **av, t_aux *tmp)
+static int	axu_setup(int ac, char **av, t_aux *tmp)
 {
 	tmp->data = ft_calloc(ac - 1, sizeof(int));
 	tmp->index = ft_calloc(ac - 1, sizeof(int));
@@ -58,8 +58,8 @@ int	setup_stack(int ac, char **av, t_stack *stack)
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	t_stack *b;
-	
+	t_stack	*b;
+
 	check_arg(ac, av);
 	double_init(&a, &b);
 	setup_stack(ac, av, a);

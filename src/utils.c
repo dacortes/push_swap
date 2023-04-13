@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:53:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/13 14:54:07 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:36:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	node_printf(t_node	*node, int type)
 	t_node	*nod;
 
 	nod = node;
-
 	if (type == NEXT_)
 	{
 		while (nod)
