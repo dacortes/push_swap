@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/12 19:35:12 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:28:34 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,17 @@
 # define B "\033[1;34m"    //blue
 
 // ================================= STRUCTURES ============================= //
+
+/* auxiliary structure */
+typedef struct s_axu
+{
+	int	num;
+	int	next;
+	int	index_;
+	int	tmp;
+	int	*data;
+	int	*index;
+}	t_aux;
 
 /* auxiliary node*/
 typedef struct s_node

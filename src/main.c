@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/12 19:47:41 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:49:36 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,63 +51,151 @@ void	node_printf(t_node	*node, int type)
 	}
 }
 
+/*int	setup_stack(int ac, char **av, t_stack *stack)
+{
+	t_aux	tmp;
+
+	tmp.data = ft_calloc(ac - 1, sizeof(int));
+	tmp.index = ft_calloc(ac - 1, sizeof(int));
+	if (!tmp.data || !tmp.index)
+		return (ERROR);
+	tmp.num = 0;
+	tmp.next = 1;
+	tmp.index_ = 1;
+	while (tmp.next < ac)
+	{
+		tmp.index[tmp.num] = tmp.index_++;
+		tmp.data[tmp.num++] = ft_atoi(av[tmp.next++]);
+	}
+	tmp.num = 0;
+	while (tmp.num < ac -1)
+	{
+		tmp.next = tmp.num + 1;
+		while (tmp.next < ac - 1)
+		{
+			if (tmp.data[tmp.num] < tmp.data[tmp.next])
+			{
+				tmp.tmp = tmp.index[tmp.num];
+				tmp.index[tmp.num] = tmp.index[tmp.next];
+				tmp.index[tmp.next] = tmp.tmp;
+			}
+			tmp.next++;
+		}
+		tmp.num++;
+	}
+	tmp.num = ac - 1;
+	tmp.next = ac - 2;
+	while (av[tmp.num] && tmp.num != 0)
+	{
+		push_stack(stack, ft_atoi(av[tmp.num]), tmp.index[tmp.next]);
+		tmp.num--;
+		tmp.next--;
+	}
+	free(tmp.data);
+	free(tmp.index);
+	return (SUCCESS);
+}*/
+/*int	setup_stack(int ac, char **av, t_stack *stack)
+{
+	t_aux	tmp;
+	int	min_index;
+	int min_num;
+	(void) stack;
+	tmp.data = ft_calloc(ac - 1, sizeof(int));
+	tmp.index = ft_calloc(ac - 1, sizeof(int));
+	if (!tmp.data || !tmp.index)
+		return (ERROR);
+	tmp.num = 0;
+	tmp.next = 1;
+	min_index = 1;
+	while (tmp.next < ac)
+	{
+		//tmp.index[tmp.num] = tmp.num;
+		tmp.data[tmp.num++] = ft_atoi(av[tmp.next++]);
+	}
+	tmp.num = 0;
+	while (tmp.num < ac - 1)
+		ft_printf(R"%d, "E, tmp.data[tmp.num++]);
+	ft_printf("\n");
+	tmp.num = 0;
+	tmp.next = 1;
+	ft_printf(B"%d\n"E, min_index);
+	while (tmp.num < ac - 1)
+	{
+		tmp.next = tmp.num + 1;
+		while (tmp.next < ac - 1)
+		{
+			if (tmp.data[tmp.num] > tmp.data[tmp.next])
+			{
+				min_num = tmp.data[tmp.next];
+				tmp.index[tmp.next] = min_index;
+				min_index++;
+			}
+			tmp.next++;
+		}
+		tmp.num++;
+	}
+	ft_printf("\n%d", min_num);
+	ft_printf("\n");
+	tmp.num = 0;
+	while (tmp.num < ac - 1)
+		ft_printf(Y"%d, "E, tmp.index[tmp.num++]);
+	ft_printf("\n");
+	free(tmp.data);
+	free(tmp.index);
+	return (SUCCESS);
+}*/
 int	setup_stack(int ac, char **av, t_stack *stack)
 {
-	int	num;
-	int	next;
-	int in;
-	int tmp;
-	int	*data;
-	int	*index;
-
-	data = ft_calloc(ac - 1, sizeof(int));
-	index = ft_calloc(ac - 1, sizeof(int));
-	if (!index || !data)
+	t_aux	tmp;
+	int	min_index;
+	(void) stack;
+	tmp.data = ft_calloc(ac - 1, sizeof(int));
+	tmp.index = ft_calloc(ac - 1, sizeof(int));
+	if (!tmp.data || !tmp.index)
 		return (ERROR);
-	num = 0;
-	next = 1;
-	in = 1;
-	tmp = in;
-	data[num] = 0;
-	while (next < ac)
+	tmp.num = 0;
+	tmp.next = 1;
+	while (tmp.next < ac)
 	{
-		index[num] = in++;
-		data[num++] = ft_atoi(av[next++]);
+		tmp.data[tmp.num++] = ft_atoi(av[tmp.next++]);
 	}
-	num = 0;
-	while (num < ac -1)
+	tmp.num = 0;
+	while (tmp.num < ac - 1)
+		ft_printf(R"%d, "E, tmp.data[tmp.num++]);
+	ft_printf("\n");
+	tmp.num = 0;
+	min_index = 1;
+	while (tmp.num < ac - 1)
 	{
-		next = num + 1;
-		while (next < ac - 1)
+		tmp.next = 0;
+		min_index = 1;
+		while (tmp.next < ac - 1)
 		{
-			if (data[num] > data[next])
+			if (tmp.data[tmp.num] > tmp.data[tmp.next])
 			{
-				tmp = index[num];
-				index[num] = index[next];
-				index[next] = tmp;
+				min_index++;
 			}
-			next++;
+			tmp.next++;
 		}
-		num++;
+		tmp.index[tmp.num] = min_index;
+		tmp.num++;
 	}
-	num = 0;
-	while (num < ac - 1)
-		ft_printf(Y"%d, "E, data[num++]);
-	num = 0;
 	ft_printf("\n");
-	while (num < ac - 1)
-		ft_printf(R"%d, "E, index[num++]);
+	tmp.num = 0;
+	while (tmp.num < ac - 1)
+		ft_printf(Y"%d, "E, tmp.index[tmp.num++]);
 	ft_printf("\n");
-	num = ac - 1;
-	next = ac - 2;
-	while (av[num] && num != 0)
+	tmp.num = ac - 1;
+	tmp.next = ac - 2;
+	while (av[tmp.num] && tmp.num != 0)
 	{
-		push_stack(stack, ft_atoi(av[num]), index[next]);
-		num--;
-		next--;
+		push_stack(stack, ft_atoi(av[tmp.num]), tmp.index[tmp.next]);
+		tmp.num--;
+		tmp.next--;
 	}
-	free(data);
-	free(index);
+	free(tmp.data);
+	free(tmp.index);
 	return (SUCCESS);
 }
 
@@ -127,13 +215,13 @@ int	main(int ac, char **av)
 		return (SUCCESS);
 	}
 	stack_printf(a);
-	/*push(a, b, PUSH_B);
+	push(a, b, PUSH_B);
 	push(a, b, PUSH_B);
 	push(a, b, PUSH_B);
 	ft_printf(B"Stack A\n"E);
 	stack_printf(a);
 	ft_printf(B"Stack B\n"E);
-	stack_printf(b);*/
+	stack_printf(b);
 	double_destroy(a, b);
 	return (SUCCESS);
 }
