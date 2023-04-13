@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/13 10:28:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:54:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ typedef struct s_axu
 {
 	int	num;
 	int	next;
-	int	index_;
-	int	tmp;
+	int	min_index;
 	int	*data;
 	int	*index;
 }	t_aux;
@@ -104,7 +103,7 @@ int		rotate_rotate(t_stack *one, t_stack *two, int type_rotate);
 /* intructions/swap */
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
-/* test */
+/* utils.c */
 void	stack_printf(t_stack	*sactk);
 void	node_printf(t_node	*node, int type);
 #endif
