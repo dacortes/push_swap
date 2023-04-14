@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:09:48 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 11:11:21 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:07:16 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	swap(t_stack *stack, int type_swap)
 	t_node	*next;
 
 	if (stack->size < 2)
-		return (FALSE);
+		return (ERROR);
 	top = stack->top;
 	next = stack->top->next;
 	stack->top = next;
@@ -34,7 +34,7 @@ int	swap(t_stack *stack, int type_swap)
 int	swap_swap(t_stack *stack_one, t_stack *stack_tow)
 {
 	if (stack_one->size < 2 && stack_tow->size < 2)
-		return (FALSE);
+		return (ERROR);
 	swap(stack_one, 0);
 	swap(stack_tow, 0);
 	ft_printf("ss\n");

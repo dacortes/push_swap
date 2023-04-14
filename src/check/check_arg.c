@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/12 16:03:25 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:56:41 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,18 +115,4 @@ int	check_duplicate(int ac, char **av)
 	}
 	free(stack);
 	return (SUCCESS);
-}
-
-int	is_stack_sorted(t_stack *stack)
-{
-	t_node	*node;
-
-	node = stack->top;
-	while (node && node->next)
-	{
-		if (node->data > node->next->data)
-			return (FALSE);
-		node = node->next;
-	}
-	return (TRUE);
 }

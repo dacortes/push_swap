@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/04/13 14:54:58 by dacortes         ###   ########.fr        #
+#    Updated: 2023/04/14 17:02:21 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC = check/check_arg.c\
 	init/init.c\
 	instructions/push.c instructions/reverse_rotate.c instructions/swap.c\
 	instructions/rotate.c\
+	sorted/sorted.c\
 	main.c\
 	utils.c
 LIBFT = ./libft/
@@ -63,6 +64,7 @@ dir:
 	@mkdir -p $(D_OBJ)/destroy
 	@mkdir -p $(D_OBJ)/init
 	@mkdir -p $(D_OBJ)/instructions
+	@mkdir -p $(D_OBJ)/sorted
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r$@...$(E)"
 	@$(CC) -MMD $(FLAGS) -c $< -o $@ $(INC)

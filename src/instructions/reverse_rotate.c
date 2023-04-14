@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:10:23 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/11 12:07:21 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:06:58 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	reverse_rotate(t_stack *stack, int type_reverse_rotate)
 	t_node	*bot;
 
 	if (stack->size < 2)
-		return (FALSE);
+		return (ERROR);
 	top = stack->top;
 	bot = stack->bot;
 	prev_bot = bot->prev;
@@ -39,9 +39,9 @@ int	reverse_rotate(t_stack *stack, int type_reverse_rotate)
 int	double_rrr(t_stack *one, t_stack *two, int type_reverse_rotate)
 {
 	if (one->size < 2 || two->size < 2)
-		return (FALSE);
+		return (ERROR);
 	else if (!one || !two || !one->bot || !two->bot)
-		return (FALSE);
+		return (ERROR);
 	reverse_rotate(one, type_reverse_rotate);
 	reverse_rotate(two, type_reverse_rotate);
 	ft_printf("rrr\n");

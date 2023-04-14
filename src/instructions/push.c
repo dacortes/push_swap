@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/12 19:38:50 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:06:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	pop_stack(t_stack *stack)
 	int		index;
 
 	if (!stack || !stack->top)
-		return (FALSE);
+		return (ERROR);
 	temp = stack->top;
 	data = temp->data;
 	index = temp->index;
@@ -71,7 +71,7 @@ int	push(t_stack *scr, t_stack *dst, int type_push)
 	t_node	*nod;
 
 	if (!scr || !scr->top)
-		return (FALSE);
+		return (ERROR);
 	nod = scr->top;
 	push_stack(dst, nod->data, nod->index);
 	pop_stack(scr);

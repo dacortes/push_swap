@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/13 15:35:36 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:37:36 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,37 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int	if_possible;
+	int	i;
 
 	check_arg(ac, av);
 	double_init(&a, &b);
 	setup_stack(ac, av, a);
-	if (is_stack_sorted(a) == FALSE)
-		ft_printf(B"You can work\n"E);
-	else
+	if (is_stack_sorted(a, AS) != FALSE)
 	{
 		double_destroy(a, b);
 		return (SUCCESS);
 	}
+	ft_printf(B"You can work\n"E);
+	ft_printf(Y"Push to b\n"E);
+	i = 1;
+	if_possible = SUCCESS;
+	while (a->size != 0 && if_possible != ERROR)
+	{
+		if (a->top->index == i)
+		{
+			push(a, b, PUSH_B);
+			i++;
+		}
+		else
+			if_possible = rotate(a, ROTATE_A);
+	}
+	ft_printf(G"ascendingly organized : %d\n"E, is_stack_sorted(b, AS));
+	ft_printf(G"organize descending: %d\n"E, is_stack_sorted(b, DES));
+	ft_printf("%d\n", a->size);
+	ft_printf(R"Stack A\n"E);
 	stack_printf(a);
-	push(a, b, PUSH_B);
-	push(a, b, PUSH_B);
-	push(a, b, PUSH_B);
-	ft_printf(B"Stack A\n"E);
-	stack_printf(a);
-	ft_printf(B"Stack B\n"E);
+	ft_printf(R"Stack B\n"E);
 	stack_printf(b);
 	double_destroy(a, b);
 	return (SUCCESS);

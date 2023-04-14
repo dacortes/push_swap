@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/13 14:54:28 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:31:38 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define E_EXIT  1
 
 /* Options */
+# define AS				1
+# define DES			2
 # define NEXT_			1
 # define PREV_			2
 # define SWAP_A			1
@@ -84,7 +86,7 @@ int		check_arg(int ac, char **av);
 int		check_av(char **av);
 int		check_num(int ac, char **av);
 int		check_duplicate(int ac, char **av);
-int		is_stack_sorted(t_stack *stack);
+int		is_stack_sorted(t_stack *stack, int type);
 /* src/destroy/destroy.c */
 void	stack_destroy(t_stack *stack);
 void	double_destroy(t_stack *one, t_stack *two);
