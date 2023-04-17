@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:10:23 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/14 13:06:58 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:28:16 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,32 @@ int	reverse_rotate(t_stack *stack, int type_reverse_rotate)
 
 	if (stack->size < 2)
 		return (ERROR);
-	top = stack->top;
-	bot = stack->bot;
-	prev_bot = bot->prev;
-	stack->bot = prev_bot;
-	prev_bot->next = NULL;
-	prev_bot->prev = NULL;
-	top->prev = bot;
-	bot->next = top;
-	stack->top = bot;
 	if (type_reverse_rotate == REV_ROTATE_A)
 		ft_printf("rra\n");
 	if (type_reverse_rotate == REV_ROTATE_B)
 		ft_printf("rrb\n");
+	if (stack->size == 2)
+	{
+		swap(stack, 0);
+		return (SUCCESS);
+	}
+	top = stack->top;
+	bot = stack->bot;
+	prev_bot = bot->prev;
+	if (!prev_bot)
+	{
+		top->prev = NULL;
+		bot->next = top;
+		stack->top = bot;
+	}
+	else
+	{
+		stack->bot = prev_bot;
+		prev_bot->next = NULL;
+		top->prev = bot;
+		bot->next = top;
+		stack->top = bot;
+	}
 	return (SUCCESS);
 }
 

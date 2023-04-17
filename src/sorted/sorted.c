@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:56:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/14 18:08:57 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:03:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,28 @@ int	is_stack_sorted(t_stack *stack, int type)
 	return (TRUE);
 }
 
-int	small_stack_size(t_stack *stack)
+int	small_stack_size(t_stack *a, t_stack *b)
 {
-	if (stack->size == 2)
+	t_aux	tmp;
+
+	(void)b;
+	tmp.num = 1;
+	tmp.if_possible = TRUE;
+	if (a->size == 2)
 	{
+		if (is_stack_sorted(a, DES) == TRUE)
+			swap(a, SWAP_A);
 		return (TRUE);
 	}
-	if (stack->size == 3)
+	if (a->size == 3)
+	{
+		swap(a, SWAP_A);
+		reverse_rotate(a, REV_ROTATE_A);
 		return (TRUE);
-	if (stack->size == 4)
+	}
+	if (a->size == 4)
 		return (TRUE);
-	if (stack->size == 5)
+	if (a->size == 5)
 		return (TRUE);
 	return (FALSE);
 }

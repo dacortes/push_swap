@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/14 13:31:38 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:23:13 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_axu
 	int	min_index;
 	int	*data;
 	int	*index;
+	int	if_possible;
 }	t_aux;
 
 /* auxiliary node*/
@@ -86,7 +87,6 @@ int		check_arg(int ac, char **av);
 int		check_av(char **av);
 int		check_num(int ac, char **av);
 int		check_duplicate(int ac, char **av);
-int		is_stack_sorted(t_stack *stack, int type);
 /* src/destroy/destroy.c */
 void	stack_destroy(t_stack *stack);
 void	double_destroy(t_stack *one, t_stack *two);
@@ -105,6 +105,9 @@ int		rotate_rotate(t_stack *one, t_stack *two, int type_rotate);
 /* intructions/swap */
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
+/* sorted/ssorted.c */
+int		is_stack_sorted(t_stack *stack, int type);
+int		small_stack_size(t_stack *one, t_stack *two);
 /* utils.c */
 void	stack_printf(t_stack	*sactk);
 void	node_printf(t_node	*node, int type);
