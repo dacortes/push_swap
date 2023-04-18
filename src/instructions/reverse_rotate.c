@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:10:23 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/17 13:28:16 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:40:19 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	reverse_rotate(t_stack *stack, int type_reverse_rotate)
 		top->prev = bot;
 		bot->next = top;
 		stack->top = bot;
+		stack->top->prev = NULL;
 	}
 	return (SUCCESS);
 }

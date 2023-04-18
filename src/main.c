@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/17 13:27:21 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 13:19:45 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,6 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	//int	if_possible;
-	//int	i;
-
 	check_arg(ac, av);
 	double_init(&a, &b);
 	setup_stack(ac, av, a);
@@ -70,35 +67,13 @@ int	main(int ac, char **av)
 		double_destroy(a, b);
 		return (SUCCESS);
 	}
-	ft_printf(B"You can work\n"E);
-	stack_printf(a);
-	//stack_printf(a);
-	/*ft_printf(Y"Push to b\n"E);
-	i = 1;
-	if_possible = SUCCESS;
-	while (a->size != 0 && if_possible != ERROR)
-	{
-		if (a->top->index == i)
-		{
-			push(a, b, PUSH_B);
-			i++;
-		}
-		else
-			if_possible = rotate(a, ROTATE_A);
-	}
-	ft_printf(G"ascendingly organized : %d\n"E, is_stack_sorted(b, AS));
-	ft_printf(G"organize descending: %d\n"E, is_stack_sorted(b, DES));*/
-	//swap(a, SWAP_A);
-	//reverse_rotate(a, REV_ROTATE_A);
-	//swap(a, SWAP_A);
-	//small_stack_size(a, b);
-	//swap(a, SWAP_A);
-	ft_printf(B"You can work\n"E);
-	//reverse_rotate(a, REV_ROTATE_A);
-	//swap(a, SWAP_A);
-	reverse_rotate(a, REV_ROTATE_A);
-	//swap(a, SWAP_A);
-	stack_printf(a);
+	push(a, b, PUSH_B);
+	push(a, b, PUSH_B);
+	swap(b, SWAP_B);
+	push(a, b, PUSH_B);
+	//rotate(b, ROTATE_B);
+	// double_rrr(a, b, ROTATE);
+	reverse_rotate(b, ROTATE_B);
 	double_destroy(a, b);
 	return (SUCCESS);
 }

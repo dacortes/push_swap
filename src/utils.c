@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:53:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/17 12:46:23 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:40:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	stack_printf(t_stack	*sactk)
 	nod = sactk->top;
 	while (nod)
 	{
-		ft_printf(R"%p %p %p\n"E, nod, nod->next, nod->prev);
+		ft_printf(R"node:%p next:%p prev:%p\n"E, nod, nod->next, nod->prev);
 		ft_printf(G"data :%d\n"E, nod->data);
 		ft_printf(Y"index:%d\n"E, nod->index);
 		nod = nod->next;

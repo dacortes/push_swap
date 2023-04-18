@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/17 10:25:29 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 13:01:05 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	push_stack(t_stack *stack, int data, int index)
 	new_node->data = data;
 	new_node->index = index;
 	new_node->next = NULL;
+	new_node->prev = NULL;
 	if (stack->size == 0)
 	{
 		stack->top = new_node;
@@ -41,14 +42,10 @@ int	push_stack(t_stack *stack, int data, int index)
 int	pop_stack(t_stack *stack)
 {
 	t_node	*temp;
-	int		data;
-	int		index;
 
 	if (!stack || !stack->top)
 		return (ERROR);
 	temp = stack->top;
-	data = temp->data;
-	index = temp->index;
 	stack->top = temp->next;
 	if (!stack->top)
 		stack->bot = NULL;
@@ -61,9 +58,7 @@ int	pop_stack(t_stack *stack)
 	}
 	free(temp);
 	stack->size--;
-	if (stack->size == 0)
-		stack->bot = NULL;
-	return (data);
+	return (SUCCESS);
 }
 
 int	push(t_stack *scr, t_stack *dst, int type_push)
