@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 19:41:56 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 11:14:07 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+
 	check_arg(ac, av);
 	double_init(&a, &b);
 	setup_stack(ac, av, a);
@@ -69,8 +70,6 @@ int	main(int ac, char **av)
 	}
 	small_stack_size(a, b);
 	stack_printf(a);
-	//ft_printf("--->\n");
-	//stack_printf(b);
 	double_destroy(a, b);
 	return (SUCCESS);
 }

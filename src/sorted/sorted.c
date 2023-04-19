@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:56:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/19 10:32:53 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 11:12:59 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	is_stack_sorted(t_stack *stack, int type)
 {
 	t_node	*node;
 
-	
 	if (type == AS)
 	{
 		node = stack->top;
@@ -55,7 +54,7 @@ int	small_stack_size(t_stack *a, t_stack *b)
 	}
 	else if (a->size == 4)
 	{
-		the_size_is_four(a , b);
+		the_size_is_four(a, b);
 		return (TRUE);
 	}
 	else if (a->size == 5)
