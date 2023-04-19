@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 16:53:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 10:50:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,6 @@
 
 // ================================= STRUCTURES ============================= //
 
-/* auxiliary structure */
-typedef struct s_axu
-{
-	int	num;
-	int	next;
-	int	min_index;
-	int	*data;
-	int	*index;
-	int	if_possible;
-}	t_aux;
-
 /* auxiliary node*/
 typedef struct s_node
 {
@@ -79,6 +68,19 @@ typedef struct s_stack
 	t_node	*top;
 	t_node	*bot;
 }	t_stack;
+
+/* auxiliary structure */
+typedef struct s_axu
+{
+	int		num;
+	int		next;
+	int		min_index;
+	int		*data;
+	int		*index;
+	t_node	*prev_bot;
+	t_node	*top;
+	t_node	*bot;
+}	t_aux;
 
 // ================================= FUNCTIONS ============================== //
 
@@ -105,7 +107,13 @@ int		rotate_rotate(t_stack *one, t_stack *two, int type_rotate);
 /* intructions/swap */
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
-/* sorted/ssorted.c */
+/* sorted/size3.c */
+int		the_size_is_three(t_stack *a);
+/* sorted/size4.c */
+int		the_size_is_four(t_stack *a, t_stack *b);
+/* sorted/size5.c */
+int		the_size_is_five(t_stack *a, t_stack *b);
+/* sorted/sorted.c */
 int		is_stack_sorted(t_stack *stack, int type);
 int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
