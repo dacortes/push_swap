@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:09:48 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 13:19:56 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:26:56 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ int	swap(t_stack *stack, int type_swap)
 	if (stack->size == 2)
 		stack->bot = top;
 	if (stack->size > 2)
-	{
-		ft_printf("Estoy aqui\n");
 		stack->top->next->next->prev = top;
-	}
 	return (SUCCESS);
 }
 

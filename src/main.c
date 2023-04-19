@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 13:19:45 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:41:56 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,10 @@ int	main(int ac, char **av)
 		double_destroy(a, b);
 		return (SUCCESS);
 	}
-	push(a, b, PUSH_B);
-	push(a, b, PUSH_B);
-	swap(b, SWAP_B);
-	push(a, b, PUSH_B);
-	//rotate(b, ROTATE_B);
-	// double_rrr(a, b, ROTATE);
-	reverse_rotate(b, ROTATE_B);
+	small_stack_size(a, b);
+	stack_printf(a);
+	//ft_printf("--->\n");
+	//stack_printf(b);
 	double_destroy(a, b);
 	return (SUCCESS);
 }

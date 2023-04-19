@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/14 18:23:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:53:34 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
 /* sorted/ssorted.c */
 int		is_stack_sorted(t_stack *stack, int type);
+int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
 /* utils.c */
 void	stack_printf(t_stack	*sactk);
