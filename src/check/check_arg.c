@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:20:00 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/14 16:56:41 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:00:23 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 int	check_arg(int ac, char **av)
 {
 	if (ac <= 1)
-	{
-		ft_printf(R"Error\n"E);
 		exit (ERROR);
-	}
 	else if (check_av(av) == ERROR || check_num(ac, av) == ERROR
 		|| check_duplicate(ac, av) == ERROR)
 	{
