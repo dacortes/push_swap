@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/19 10:50:24 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:57:19 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,9 @@
 # define DES			2
 # define NEXT_			1
 # define PREV_			2
-# define SWAP_A			1
-# define SWAP_B			2
-# define SWAP			3
-# define PUSH_A			1
-# define PUSH_B			2
-# define ROTATE_A		1
-# define ROTATE_B		2
-# define ROTATE			3
-# define REV_ROTATE_A	1
-# define REV_ROTATE_B	2
-# define REV_ROTATE		3
+
+# define STACK_A		1
+# define STACK_B		2
 
 // ================================= COLORS ================================= //
 
@@ -117,6 +109,7 @@ int		the_size_is_five(t_stack *a, t_stack *b);
 int		is_stack_sorted(t_stack *stack, int type);
 int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
+int		the_rest(t_stack *a, t_stack *b);
 /* utils.c */
 void	stack_printf(t_stack	*sactk);
 void	node_printf(t_node	*node, int type);

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:12:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 13:01:05 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:05:49 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int	push(t_stack *scr, t_stack *dst, int type_push)
 	nod = scr->top;
 	push_stack(dst, nod->data, nod->index);
 	pop_stack(scr);
-	if (type_push == PUSH_A)
+	if (type_push == STACK_A)
 		ft_printf("pa\n");
-	if (type_push == PUSH_B)
+	if (type_push == STACK_B)
 		ft_printf("pb\n");
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:10:41 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/19 10:41:03 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:06:37 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	rotate(t_stack *stack, int type_rotate)
 
 	if (stack->size < 2)
 		return (ERROR);
-	if (type_rotate == ROTATE_A)
+	if (type_rotate == STACK_A)
 		ft_printf("ra\n");
-	if (type_rotate == ROTATE_B)
+	if (type_rotate == STACK_B)
 		ft_printf("rb\n");
 	top = stack->top;
 	bot = stack->bot;

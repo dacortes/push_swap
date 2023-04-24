@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:10:23 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/19 11:01:39 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:06:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	printf_rr(int type_reverse_rotate)
 {
-	if (type_reverse_rotate == REV_ROTATE_A)
+	if (type_reverse_rotate == STACK_A)
 		ft_printf("rra\n");
-	if (type_reverse_rotate == REV_ROTATE_B)
+	if (type_reverse_rotate == STACK_B)
 		ft_printf("rrb\n");
 }
 

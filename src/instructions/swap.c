@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:09:48 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/18 15:26:56 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:33:02 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	swap(t_stack *stack, int type_swap)
 
 	if (stack->size < 2)
 		return (ERROR);
-	if (type_swap == SWAP_A)
+	if (type_swap == STACK_A)
 		ft_printf("sa\n");
-	if (type_swap == SWAP_B)
+	if (type_swap == STACK_B)
 		ft_printf("sb\n");
 	top = stack->top;
 	next = stack->top->next;
