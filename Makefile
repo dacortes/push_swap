@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 20:59:26 by dacortes          #+#    #+#              #
-#    Updated: 2023/04/19 10:39:28 by dacortes         ###   ########.fr        #
+#    Updated: 2023/04/24 14:21:43 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = check/check_arg.c\
 	init/init.c\
 	instructions/push.c instructions/reverse_rotate.c instructions/swap.c\
 	instructions/rotate.c\
-	sorted/sorted.c sorted/size3.c sorted/size4.c sorted/size5.c\
+	sorted/sorted.c sorted/size3.c sorted/size4.c sorted/size5.c sorted/the_rest.c\
 	main.c\
 	utils.c
 LIBFT = ./libft/

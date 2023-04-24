@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/19 12:57:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:00:00 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,12 @@ typedef struct s_stack
 	t_node	*bot;
 }	t_stack;
 
-/* auxiliary structure */
 typedef struct s_axu
 {
+	int		size_ini;
+	int		chunks;
+	int		range_ini;
+	int		range_end;
 	int		num;
 	int		next;
 	int		min_index;
@@ -109,6 +112,7 @@ int		the_size_is_five(t_stack *a, t_stack *b);
 int		is_stack_sorted(t_stack *stack, int type);
 int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
+/* sorted/the_rest.c */
 int		the_rest(t_stack *a, t_stack *b);
 /* utils.c */
 void	stack_printf(t_stack	*sactk);
