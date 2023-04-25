@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/24 15:32:09 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:59:41 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,18 @@ int	main(int ac, char **av)
 	}
 	small_stack_size(a, b);
 	the_rest(a, b);
+	/*if (is_stack_sorted(a, AS))
+	{
+		ft_printf(G"OK\n"E);
+		stack_printf(a);
+		ft_printf(G"----------\n"E);
+		stack_printf(b);
+	}
+	else
+	{
+		ft_printf(R"KO\n"E);
+		stack_printf(a);
+	}*/
 	double_destroy(a, b);
 	return (SUCCESS);
 }
