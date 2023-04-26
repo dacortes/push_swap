@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:17:52 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/24 15:36:05 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:50:18 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_bot(t_stack *stack)
 	while (node)
 	{
 		node = node->next;
-		if (node->index == stack->size)
+		if (node && node->index == stack->size)
 			break ;
 		pos++;
 	}

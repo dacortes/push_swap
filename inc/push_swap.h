@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/24 15:00:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/26 10:29:41 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ int		rotate_rotate(t_stack *one, t_stack *two, int type_rotate);
 int		swap(t_stack *stack, int type_swap);
 int		swap_swap(t_stack *stack_one, t_stack *stack_tow);
 /* sorted/size3.c */
+int		find_num(t_stack *stack, int num);
 int		the_size_is_three(t_stack *a);
 /* sorted/size4.c */
 int		the_size_is_four(t_stack *a, t_stack *b);
@@ -113,6 +114,7 @@ int		is_stack_sorted(t_stack *stack, int type);
 int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
 /* sorted/the_rest.c */
+int		find_bot(t_stack *stack);
 int		the_rest(t_stack *a, t_stack *b);
 /* utils.c */
 void	stack_printf(t_stack	*sactk);
