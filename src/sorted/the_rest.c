@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:17:52 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/27 19:21:01 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:12:31 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	find_bot(t_stack *stack)
 
 // static void	number_of_chunks(t_aux *tmp, t_stack *a, t_stack *b)
 // {
-// 	tmp->chunks = a->size / 25;
 // 	while (a->size)
 // 	{
 // 		while (b->size != tmp->range_end && a->size != 0)
@@ -43,7 +42,6 @@ int	find_bot(t_stack *stack)
 // 				if (b->size > 2 && b->top->index
 // 					<= ((tmp->range_end - tmp->range_ini) / 2) + tmp->range_ini)
 // 					rotate(b, STACK_B);
-// 				tmp->num--;
 // 			}
 // 			reverse_rotate(a, STACK_A);
 // 		}
@@ -53,7 +51,6 @@ int	find_bot(t_stack *stack)
 // 			tmp->range_end = tmp->range_end + 25;
 // 			tmp->num = 25;
 // 		}
-// 		tmp->chunks--;
 // 	}
 // }
 
@@ -118,29 +115,6 @@ int find_max_pos(t_aux *tmp, t_stack *stack)
     return max_pos;
 }
 
-
-void range(t_aux *tmp, t_stack *stack)
-{
-	t_node *node;
-	int range;
-	int min_pos = stack->size;
-
-	node = stack->top;
-	while (node)
-	{
-		range = node->index >= tmp->range_ini
-			&& node->index <= tmp->range_end;
-		if (range)
-		{
-			int num_pos = find_num(stack, node->index);
-			if (num_pos < min_pos)
-				min_pos = num_pos;
-			ft_printf(G"number: %d     pos: %d\n"E, node->index, num_pos);
-		}
-		node = node->next;
-	}
-}
-
 static void	number_of_chunks(t_aux *tmp, t_stack *a, t_stack *b)
 {
 	int case1 = 0;
@@ -161,6 +135,15 @@ static void	number_of_chunks(t_aux *tmp, t_stack *a, t_stack *b)
 				reverse_rotate(a, STACK_A);
 			else if (find_min_pos(tmp, a) < find_max_pos(tmp, a))
 				rotate(a , STACK_A);
+			else if (find_min_pos(tmp, a) == 2 && find_min_pos(tmp, a) != (a->size - 1))
+				swap(a, STACK_A);
+			else if (find_min_pos(tmp, a) != 2 && find_min_pos(tmp, a) == (a->size - 1))
+				reverse_rotate(a, STACK_A);
+			else if (find_min_pos(tmp, a) != 2 && find_min_pos(tmp, a) == (a->size - 2))
+			{
+				reverse_rotate(a, STACK_A);
+				reverse_rotate(a, STACK_A);
+			}
 			else
 				reverse_rotate(a, STACK_A);
 		}
