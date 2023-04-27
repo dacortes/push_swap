@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/26 10:29:41 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:22:00 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ typedef struct s_stack
 typedef struct s_axu
 {
 	int		size_ini;
-	int		chunks;
 	int		range_ini;
 	int		range_end;
 	int		num;
