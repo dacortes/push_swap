@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:17:52 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/27 20:12:31 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/04/28 08:44:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,12 +181,6 @@ int	the_rest(t_stack *a, t_stack *b)
 	{
 		number_of_chunks(&tmp, a, b);
 		push_sorted(a, b);
-		// ft_printf("Min position:%d\n", find_min_pos(&tmp, a));
-		// ft_printf("Max position:%d\n", find_max_pos(&tmp, a));
 	}
-	// if (is_stack_sorted(a, AS))
-	// 	ft_printf(G"OK\n"E);
-	// else
-	// 	ft_printf(R"KO\n"E);
 	return (FALSE);
 }
