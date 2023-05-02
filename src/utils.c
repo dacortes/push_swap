@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:53:09 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/27 18:55:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:04:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,3 @@ void	node_printf(t_node	*node, int type)
 		}
 	}
 }
-
-// void range(t_aux *tmp, t_stack *stack)
-// {
-// 	t_node *node;
-// 	int range;
-// 	int min_pos = stack->size;
-
-// 	node = stack->top;
-// 	while (node)
-// 	{
-// 		range = node->index >= tmp->range_ini
-// 			&& node->index <= tmp->range_end;
-// 		if (range)
-// 		{
-// 			int num_pos = find_num(stack, node->index);
-// 			if (num_pos < min_pos)
-// 				min_pos = num_pos;
-// 			ft_printf(G"number: %d     pos: %d\n"E, node->index, num_pos);
-// 		}
-// 		node = node->next;
-// 	}
-// 	ft_printf("Minimum position: %d\n", min_pos);
-// }

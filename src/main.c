@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:06:27 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/26 10:55:08 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:36:56 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int	main(int ac, char **av)
 		return (SUCCESS);
 	}
 	small_stack_size(a, b);
-	the_rest(a, b);
+	if (a->size >= 6)
+		the_rest(a, b);
 	double_destroy(a, b);
 	return (SUCCESS);
 }

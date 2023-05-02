@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:04:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/27 16:22:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:47:51 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,12 @@ int		is_stack_sorted(t_stack *stack, int type);
 int		the_size_is_four(t_stack *a, t_stack *b);
 int		small_stack_size(t_stack *one, t_stack *two);
 /* sorted/the_rest.c */
-int		find_bot(t_stack *stack);
 int		the_rest(t_stack *a, t_stack *b);
 /* utils.c */
+int		find_bot(t_stack *stack);
+int		find_num(t_stack *stack, int num);
+int		find_min_pos(t_aux *tmp, t_stack *stack);
+int		find_max_pos(t_aux *tmp, t_stack *stack);
 void	stack_printf(t_stack	*sactk);
 void	node_printf(t_node	*node, int type);
 #endif

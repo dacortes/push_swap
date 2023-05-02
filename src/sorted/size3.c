@@ -6,28 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:30:05 by dacortes          #+#    #+#             */
-/*   Updated: 2023/04/26 10:52:24 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:45:29 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/push_swap.h"
-
-int	find_num(t_stack *stack, int num)
-{
-	t_node	*node;
-	int		pos;
-
-	pos = 1;
-	node = stack->top;
-	while (node)
-	{
-		if (node->index == num)
-			break ;
-		node = node->next;
-		pos++;
-	}
-	return (pos);
-}
 
 int	the_size_is_three(t_stack *a)
 {
